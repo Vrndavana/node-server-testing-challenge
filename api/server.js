@@ -1,5 +1,5 @@
 const express = require("express");
-const Hobbits = require("../warriors/warriorsModels");
+const Warriors = require("../warriors/warriorsModels");
 const server = express();
 
 server.use(express.json());
@@ -8,8 +8,8 @@ server.get("/", (req, res) => {
 });
 
 server.get("/warriors", (req, res) => {
-  Hobbits.getAll()
-    .then(warroprs => {
+  Warriors.getAll()
+    .then(warriors => {
       res.status(200).json(warriors);
     })
     .catch(error => {

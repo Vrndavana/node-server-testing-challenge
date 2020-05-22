@@ -1,10 +1,10 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('warriorsTable').del()
+  return knex('warriors').del()
     .then(function () {
       // Inserts seed entries
-      return knex('warriorTable').insert([
+      return knex('warrior').insert([
         {name: 'sam'},
         {name: 'broba'},
         {name: 'ggrrr'}

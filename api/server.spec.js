@@ -23,14 +23,25 @@ describe('server', () => {
                 expect(response.body.api).toBe("up");
             })
         })
-    })
 
-        describe('get /warriors', () => {
-            it('should get array', () =>{
+        it("should return an array", () => {
+            return supertest(server)
+              .get("/warriors")
+              .then(response => {
                 expect(Array.isArray(response.body)).toBe(true);
-            }
-            )
-        })
+              });
+          })
+
+
+
+    })
+        // describe('get /warriors', () => {
+        //     supertest(server)
+        //     it('should get array', () =>{
+        //         expect(Array.isArray(response.body)).toBe(true);
+        //     }
+        //     )
+        // })
 
 
 })
