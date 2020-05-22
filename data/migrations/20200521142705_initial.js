@@ -1,9 +1,14 @@
 // THIS IS SCHEMA TABLES 
 
-exports.up = function(knex) {
+exports.up = function (knex) {
+    return knex.schema.createTable("warriors", tbl => {
+      tbl.increments();
   
-};
-
-exports.down = function(knex) {
+      tbl.string("name", 255).notNullable();
+    });
+  };
   
-};
+  exports.down = function (knex) {
+    // undo the operation in up
+    return knex.schema.dropTableIfExists("warriors");
+  };
